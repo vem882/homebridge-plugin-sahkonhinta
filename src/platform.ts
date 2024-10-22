@@ -1,6 +1,6 @@
 import { API, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig } from 'homebridge';
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings.js';
-import { SahkoHintaAccessory } from './accessory.js';
+import { SahkoHintaAccessory } from './platformAccessory.js';
 
 /**
  * Tämä on pääluokka, joka vastaa Homebridge-alustasi toiminnasta.
