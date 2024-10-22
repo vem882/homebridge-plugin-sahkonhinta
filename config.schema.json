@@ -1,16 +1,59 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "SahkoHintaPlatform",
   "pluginType": "platform",
   "singular": true,
   "schema": {
     "type": "object",
     "properties": {
       "name": {
-        "title": "Name",
+        "title": "Platform Name",
         "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
+        "default": "Sähköhinta",
+        "required": true
+      },
+      "apiURL": {
+        "title": "API URL",
+        "type": "string",
+        "default": "https://www.sahkohinta-api.fi/api/v1/halpa",
+        "required": true
+      },
+      "tunnit": {
+        "title": "Tuntien lukumäärä",
+        "type": "integer",
+        "default": 1,
+        "minimum": 1,
+        "maximum": 24,
+        "required": true
+      },
+      "updateInterval": {
+        "title": "Päivitysväli (ms)",
+        "type": "integer",
+        "default": 3600000,
+        "minimum": 60000,
+        "required": true
       }
     }
-  }
+  },
+  "layout": [
+    {
+      "key": "name",
+      "title": "Alustan nimi",
+      "description": "Määritä alustan nimi."
+    },
+    {
+      "key": "apiURL",
+      "title": "API URL",
+      "description": "Sähkön hinnan API-osoite."
+    },
+    {
+      "key": "tunnit",
+      "title": "Tunnit",
+      "description": "Kuinka monta tuntia dataa haetaan."
+    },
+    {
+      "key": "updateInterval",
+      "title": "Päivitysväli",
+      "description": "Kuinka usein hinta haetaan (millisekunteina)."
+    }
+  ]
 }
